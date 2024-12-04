@@ -30,3 +30,18 @@ npm i pg
 ## Otros ajustes
 
 app.use(express.json());
+
+## Variables de entorno
+
+npm i dotenv
+luego crear carpeta en la raiz .env
+require("dotenv/config");
+
+export const pool = new Pool({
+user: process.env.PGUSER,
+host: process.env.PGHOST,
+database: process.env.PGDATABASE,
+password: process.env.PGPASSWORD,
+port: process.env.PGPORT,
+allowExitOnIdle: true,
+});
